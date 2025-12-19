@@ -27,6 +27,7 @@ public class RendezVousController {
         return rendezVousService.getRdvByPatient(id);
     }
 
+
     @GetMapping("/byDate")
     public List<RendezVous> getRendezVousByDate(@RequestParam LocalDate dateRdv){
         return rendezVousService.getRdvBydate(dateRdv);
