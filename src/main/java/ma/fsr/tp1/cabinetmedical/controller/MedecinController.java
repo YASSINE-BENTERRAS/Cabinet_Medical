@@ -1,8 +1,7 @@
-package ma.fsr.tp1.cabinetmedical.controllers;
+package ma.fsr.tp1.cabinetmedical.controller;
 
-import jakarta.persistence.EntityNotFoundException;
-import ma.fsr.tp1.cabinetmedical.entities.Medecin;
-import ma.fsr.tp1.cabinetmedical.services.MedecinService;
+import ma.fsr.tp1.cabinetmedical.entity.Medecin;
+import ma.fsr.tp1.cabinetmedical.service.MedecinService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

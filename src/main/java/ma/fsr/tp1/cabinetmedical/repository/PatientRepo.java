@@ -1,6 +1,6 @@
-package ma.fsr.tp1.cabinetmedical.repositories;
+package ma.fsr.tp1.cabinetmedical.repository;
 
-import ma.fsr.tp1.cabinetmedical.entities.Patient;
+import ma.fsr.tp1.cabinetmedical.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,13 +1,13 @@
-package ma.fsr.tp1.cabinetmedical.services;
+package ma.fsr.tp1.cabinetmedical.service;
 
 import jakarta.persistence.EntityNotFoundException;
-import ma.fsr.tp1.cabinetmedical.entities.Medecin;
-import ma.fsr.tp1.cabinetmedical.entities.Patient;
-import ma.fsr.tp1.cabinetmedical.entities.RendezVous;
-import ma.fsr.tp1.cabinetmedical.entities.Statu;
-import ma.fsr.tp1.cabinetmedical.repositories.MedecinRepo;
-import ma.fsr.tp1.cabinetmedical.repositories.PatientRepo;
-import ma.fsr.tp1.cabinetmedical.repositories.RendezVousRepo;
+import ma.fsr.tp1.cabinetmedical.entity.Medecin;
+import ma.fsr.tp1.cabinetmedical.entity.Patient;
+import ma.fsr.tp1.cabinetmedical.entity.RendezVous;
+import ma.fsr.tp1.cabinetmedical.entity.Statu;
+import ma.fsr.tp1.cabinetmedical.repository.MedecinRepo;
+import ma.fsr.tp1.cabinetmedical.repository.PatientRepo;
+import ma.fsr.tp1.cabinetmedical.repository.RendezVousRepo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

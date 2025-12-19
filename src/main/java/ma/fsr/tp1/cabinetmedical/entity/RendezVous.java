@@ -1,4 +1,4 @@
-package ma.fsr.tp1.cabinetmedical.entities;
+package ma.fsr.tp1.cabinetmedical.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

@@ -1,10 +1,9 @@
-package ma.fsr.tp1.cabinetmedical.entities;
+package ma.fsr.tp1.cabinetmedical.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
 import java.util.List;

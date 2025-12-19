@@ -1,7 +1,7 @@
-package ma.fsr.tp1.cabinetmedical.services;
+package ma.fsr.tp1.cabinetmedical.service;
 
-import ma.fsr.tp1.cabinetmedical.entities.Patient;
-import ma.fsr.tp1.cabinetmedical.repositories.PatientRepo;
+import ma.fsr.tp1.cabinetmedical.entity.Patient;
+import ma.fsr.tp1.cabinetmedical.repository.PatientRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

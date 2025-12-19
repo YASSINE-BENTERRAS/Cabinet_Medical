@@ -1,9 +1,9 @@
-package ma.fsr.tp1.cabinetmedical.repositories;
+package ma.fsr.tp1.cabinetmedical.repository;
 
-import ma.fsr.tp1.cabinetmedical.entities.Medecin;
-import ma.fsr.tp1.cabinetmedical.entities.Patient;
-import ma.fsr.tp1.cabinetmedical.entities.RendezVous;
-import ma.fsr.tp1.cabinetmedical.entities.Statu;
+import ma.fsr.tp1.cabinetmedical.entity.Medecin;
+import ma.fsr.tp1.cabinetmedical.entity.Patient;
+import ma.fsr.tp1.cabinetmedical.entity.RendezVous;
+import ma.fsr.tp1.cabinetmedical.entity.Statu;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

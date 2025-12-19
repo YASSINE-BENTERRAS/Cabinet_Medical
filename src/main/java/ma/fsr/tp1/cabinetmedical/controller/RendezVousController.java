@@ -1,8 +1,8 @@
-package ma.fsr.tp1.cabinetmedical.controllers;
+package ma.fsr.tp1.cabinetmedical.controller;
 
-import ma.fsr.tp1.cabinetmedical.entities.RendezVous;
-import ma.fsr.tp1.cabinetmedical.entities.Statu;
-import ma.fsr.tp1.cabinetmedical.services.RendezVousService;
+import ma.fsr.tp1.cabinetmedical.entity.RendezVous;
+import ma.fsr.tp1.cabinetmedical.entity.Statu;
+import ma.fsr.tp1.cabinetmedical.service.RendezVousService;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;

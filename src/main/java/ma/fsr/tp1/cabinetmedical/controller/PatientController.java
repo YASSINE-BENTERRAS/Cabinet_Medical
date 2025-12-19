@@ -1,7 +1,7 @@
-package ma.fsr.tp1.cabinetmedical.controllers;
+package ma.fsr.tp1.cabinetmedical.controller;
 
-import ma.fsr.tp1.cabinetmedical.entities.Patient;
-import ma.fsr.tp1.cabinetmedical.services.PatientService;
+import ma.fsr.tp1.cabinetmedical.entity.Patient;
+import ma.fsr.tp1.cabinetmedical.service.PatientService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

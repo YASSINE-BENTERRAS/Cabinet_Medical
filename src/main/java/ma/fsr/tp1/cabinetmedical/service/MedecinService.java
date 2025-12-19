@@ -1,10 +1,9 @@
-package ma.fsr.tp1.cabinetmedical.services;
+package ma.fsr.tp1.cabinetmedical.service;
 
 import jakarta.persistence.EntityNotFoundException;
-import ma.fsr.tp1.cabinetmedical.entities.Medecin;
-import ma.fsr.tp1.cabinetmedical.repositories.MedecinRepo;
+import ma.fsr.tp1.cabinetmedical.entity.Medecin;
+import ma.fsr.tp1.cabinetmedical.repository.MedecinRepo;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @Service

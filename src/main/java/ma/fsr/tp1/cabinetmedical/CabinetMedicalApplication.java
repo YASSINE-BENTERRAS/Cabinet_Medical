@@ -1,9 +1,9 @@
 package ma.fsr.tp1.cabinetmedical;
 
-import ma.fsr.tp1.cabinetmedical.entities.*;
-import ma.fsr.tp1.cabinetmedical.repositories.MedecinRepo;
-import ma.fsr.tp1.cabinetmedical.repositories.PatientRepo;
-import ma.fsr.tp1.cabinetmedical.repositories.RendezVousRepo;
+import ma.fsr.tp1.cabinetmedical.entity.*;
+import ma.fsr.tp1.cabinetmedical.repository.MedecinRepo;
+import ma.fsr.tp1.cabinetmedical.repository.PatientRepo;
+import ma.fsr.tp1.cabinetmedical.repository.RendezVousRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
