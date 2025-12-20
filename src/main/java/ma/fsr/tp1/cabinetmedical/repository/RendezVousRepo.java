@@ -15,6 +15,7 @@ public interface RendezVousRepo extends JpaRepository<RendezVous,Long> {
     List<RendezVous> findRendezVousByMedecin(Medecin medecin);
     List<RendezVous> findRendezVousByDateRdv(LocalDate dateRdv);
     List<RendezVous> findRendezVousByStatu(Statu statu);
+    RendezVous findRendezVousByPatientAndMedecin(Patient patient, Medecin medecin);
 
 
 

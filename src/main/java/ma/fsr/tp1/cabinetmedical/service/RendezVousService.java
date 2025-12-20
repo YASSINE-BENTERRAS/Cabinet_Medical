@@ -1,6 +1,7 @@
 package ma.fsr.tp1.cabinetmedical.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import ma.fsr.tp1.cabinetmedical.dto.RendezVousRequestDto;
 import ma.fsr.tp1.cabinetmedical.entity.Medecin;
 import ma.fsr.tp1.cabinetmedical.entity.Patient;
 import ma.fsr.tp1.cabinetmedical.entity.RendezVous;
@@ -26,20 +27,20 @@ public class RendezVousService {
         this.rendezVousRepo = rendezVousRepo;
     }
 
-    public RendezVous addRendezVous(Long patientId , Long medecinId, LocalDate deteRdv ,Statu statu){
-        Patient patient = patientRepo.findById(patientId).orElseThrow(
-                ()-> new EntityNotFoundException("Patient not found")) ;
-        Medecin medecin = medecinRepo.findById(medecinId).orElseThrow(
-                ()-> new EntityNotFoundException("Medecin not found")) ;
 
-        RendezVous rdv = new RendezVous();
-        rdv.setPatient(patient);
-        rdv.setMedecin(medecin);
-        rdv.setDateRdv(deteRdv);
-        rdv.setStatu(statu);
+    public RendezVous addRendezVous(RendezVousRequestDto requestDto){
+        Patient patient = patientRepo.findById(requestDto.patientId()).orElseThrow(
+                ()-> new EntityNotFoundException("Patient not found"));
+        Medecin medecin = medecinRepo.findById(requestDto.medecinId()).orElseThrow(
+                ()-> new EntityNotFoundException("Medecin not found"));
 
-        return rendezVousRepo.save(rdv);
+        RendezVous rendezVous = new RendezVous() ;
+        rendezVous.setPatient(patient);
+        rendezVous.setMedecin(medecin);
+        rendezVous.setDateRdv(requestDto.dateRdv());
+        rendezVous.setStatu(Statu.Planifie);
 
+        return rendezVousRepo.save(rendezVous);
     }
 
     public List<RendezVous> getRdvByPatient(Long patientId){
@@ -53,6 +54,7 @@ public class RendezVousService {
     public List<RendezVous> getRdvByMedecin(Long medecinId){
         Medecin  medecin = medecinRepo.findById(medecinId).orElseThrow(
                 ()-> new EntityNotFoundException("Medecin not found"));
+
 
         return rendezVousRepo.findRendezVousByMedecin(medecin) ;
 

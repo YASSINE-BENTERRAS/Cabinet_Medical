@@ -19,7 +19,12 @@ public class Consultation {
     private String rapport ;
 
     @OneToOne
-    @JoinColumn(name = "RendezVous_id")
+    @JoinColumn(name = "rendezVous_id")
     private RendezVous rendezVous ;
 
+    public Consultation(LocalDate dateConsultation, String rapport, RendezVous rendezVous) {
+        this.dateConsultation = dateConsultation;
+        this.rapport = rapport;
+        this.rendezVous = rendezVous;
+    }
 }

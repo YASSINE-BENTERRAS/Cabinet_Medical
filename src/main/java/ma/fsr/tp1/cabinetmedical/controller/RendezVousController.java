@@ -1,5 +1,6 @@
 package ma.fsr.tp1.cabinetmedical.controller;
 
+import ma.fsr.tp1.cabinetmedical.dto.RendezVousRequestDto;
 import ma.fsr.tp1.cabinetmedical.entity.RendezVous;
 import ma.fsr.tp1.cabinetmedical.entity.Statu;
 import ma.fsr.tp1.cabinetmedical.service.RendezVousService;
@@ -39,12 +40,9 @@ public class RendezVousController {
     }
 
     @PostMapping
-    public RendezVous createRendezVous(@RequestBody RendezVous rdv ){
-        return rendezVousService.addRendezVous(
-                rdv.getPatient().getId(),
-                rdv.getMedecin().getId(),
-                rdv.getDateRdv(),
-                rdv.getStatu()) ;
+    public RendezVous createRendezVous(@RequestBody RendezVousRequestDto rdv ){
+        return rendezVousService.addRendezVous(rdv) ;
+
     }
 
 
