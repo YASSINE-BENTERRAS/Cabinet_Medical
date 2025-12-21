@@ -61,6 +61,7 @@ public class CabinetMedicalApplication {
                 "generaliste",
                 "ilyas@gmail.com"
         ) ;
+
         RendezVous rendezVousX = new RendezVous( LocalDate.of(2025,12,18),
                 Statu.Planifie,
                 patient3,
