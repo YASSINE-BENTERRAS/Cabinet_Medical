@@ -13,6 +13,10 @@ public class PatientService {
         this.patientRepo = patientRepo;
     }
 
+    public List<Patient> getAll() {
+        return patientRepo.findAll() ;
+    }
+
     public Patient getPatientById(Long id){
         return patientRepo.findById(id).orElseThrow(()-> new IllegalArgumentException("Patient n'existe pas"));
     }

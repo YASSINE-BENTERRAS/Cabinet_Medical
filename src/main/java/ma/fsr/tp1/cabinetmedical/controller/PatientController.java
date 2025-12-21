@@ -13,27 +13,33 @@ public class PatientController {
     public PatientController(PatientService patientService) {
         this.patientService = patientService;
     }
-@GetMapping("/{id}")
-    public Patient getPatientsById(@PathVariable Long id){
-        return patientService.getPatientById(id) ;
+
+    @GetMapping
+    public List<Patient> getAll() {
+        return patientService.getAll();
     }
 
-@GetMapping("/ByName")
-    public List<Patient> getPatientsByname(@RequestParam String nom){
-        return patientService.searchPatientByNom(nom) ;
-}
+    @GetMapping("/{id}")
+        public Patient getPatientsById(@PathVariable Long id){
+            return patientService.getPatientById(id) ;
+        }
 
-@PostMapping
-    public Patient addPatient(@RequestBody Patient patient) throws Exception {
-       return patientService.createPatient(patient) ;
-}
-@PutMapping
-    public Patient updatePatient(@RequestBody Patient patient) throws Exception {
-        return patientService.updatePatient(patient) ;
-}
-@DeleteMapping
-    public void deletePatient(@RequestBody Patient patient) throws Exception {
-        patientService.deletePatient(patient) ;
-}
+    @GetMapping("/ByName")
+        public List<Patient> getPatientsByname(@RequestParam String nom){
+            return patientService.searchPatientByNom(nom) ;
+    }
 
-}
+    @PostMapping
+        public Patient addPatient(@RequestBody Patient patient) throws Exception {
+           return patientService.createPatient(patient) ;
+    }
+    @PutMapping
+        public Patient updatePatient(@RequestBody Patient patient) throws Exception {
+            return patientService.updatePatient(patient) ;
+    }
+    @DeleteMapping
+        public void deletePatient(@RequestBody Patient patient) throws Exception {
+            patientService.deletePatient(patient) ;
+    }
+
+    }

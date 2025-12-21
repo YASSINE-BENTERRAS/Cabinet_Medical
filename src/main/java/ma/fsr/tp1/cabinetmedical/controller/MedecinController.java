@@ -20,8 +20,12 @@ public class MedecinController {
         return medecinService.getMedecinById(id);
 
     }
-
     @GetMapping
+    public List<Medecin> getAll() {
+        return medecinService.getAll();
+    }
+
+    @GetMapping("/byName")
     public List<Medecin> getByName(@RequestParam String nom) {
         return medecinService.getMedecinsByNom(nom);
     }

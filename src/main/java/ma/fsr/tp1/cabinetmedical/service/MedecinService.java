@@ -19,7 +19,9 @@ public class MedecinService {
         return medecinRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Medecin avec id " + id + " n'existe pas"));
     }
 
-
+    public List<Medecin> getAll() {
+        return medecinRepo.findAll();
+    }
     public List<Medecin> getMedecinsByNom(String nom) {
         return medecinRepo.findByNom(nom);
     }

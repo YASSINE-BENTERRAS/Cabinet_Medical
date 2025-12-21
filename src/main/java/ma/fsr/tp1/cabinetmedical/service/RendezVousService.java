@@ -42,6 +42,9 @@ public class RendezVousService {
 
         return rendezVousRepo.save(rendezVous);
     }
+    public List<RendezVous> getAll(){
+        return rendezVousRepo.findAll();
+    }
 
     public List<RendezVous> getRdvByPatient(Long patientId){
         Patient patient = patientRepo.findById(patientId).orElseThrow(
