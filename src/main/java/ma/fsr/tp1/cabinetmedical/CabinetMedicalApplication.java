@@ -26,6 +26,7 @@ public class CabinetMedicalApplication {
                 "Hicham",
                 LocalDate.of(2002, 12, 1),
                 Genre.Homme,
+
                 "+212987453423"
         );
 
@@ -37,6 +38,12 @@ public class CabinetMedicalApplication {
         );
 
         Patient patient3 = new Patient(
+                "Hiba",
+                LocalDate.of(2000, 9, 1),
+                Genre.Femme,
+                "+212564563423"
+        );
+        Patient patient5 = new Patient(
                 "Hiba",
                 LocalDate.of(2000, 9, 1),
                 Genre.Femme,
