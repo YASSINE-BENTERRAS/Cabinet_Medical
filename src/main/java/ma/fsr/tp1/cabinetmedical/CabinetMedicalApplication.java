@@ -28,12 +28,14 @@ public class CabinetMedicalApplication {
                 Genre.Homme,
                 "+212987453423"
         );
+
         Patient patient2 = new Patient(
                 "Ilyas",
                 LocalDate.of(2006, 12, 1),
                 Genre.Homme,
                 "+212567453423"
         );
+
         Patient patient3 = new Patient(
                 "Hiba",
                 LocalDate.of(2000, 9, 1),
