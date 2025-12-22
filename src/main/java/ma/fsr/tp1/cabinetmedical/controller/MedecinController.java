@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/medecin")
+@RequestMapping("/medecins")
 
 public class MedecinController {
-    MedecinService medecinService ;
+    public final MedecinService medecinService ;
     public MedecinController(MedecinService medecinService){
         this.medecinService = medecinService;
     }

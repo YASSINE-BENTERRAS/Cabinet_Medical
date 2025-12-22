@@ -44,7 +44,7 @@ public class CabinetMedicalApplication {
                 "+212564563423"
         );
         Patient patient5 = new Patient(
-                "Hiba",
+                "Manal",
                 LocalDate.of(2000, 9, 1),
                 Genre.Femme,
                 "+212564563423"
@@ -70,7 +70,7 @@ public class CabinetMedicalApplication {
         ) ;
 
         RendezVous rendezVousX = new RendezVous( LocalDate.of(2025,12,18),
-                Statu.Planifie,
+                Statu.PLANIFIE,
                 patient3,
                 medecin1) ;
 
@@ -97,8 +97,6 @@ public class CabinetMedicalApplication {
             medecinRepo.save(medecin1);
             medecinRepo.save(medecin2);
 
-
-
             medecinRepo.save(new Medecin(
                     "Reda",
                     "Cardiologie",
@@ -106,19 +104,21 @@ public class CabinetMedicalApplication {
             ));
 
             rendezVousRepo.save(new RendezVous( LocalDate.of(2025,12,18),
-                                                Statu.Planifie,
+                                                Statu.PLANIFIE,
                                                 patient1,
                                                 medecin1)) ;
             rendezVousRepo.save(new RendezVous( LocalDate.of(2025,12,18),
-                    Statu.Planifie,
+                    Statu.PLANIFIE,
                     patient2,
                     medecin1)) ;
+
             rendezVousRepo.save(new RendezVous( LocalDate.of(2025,12,18),
-                    Statu.Planifie,
+                    Statu.PLANIFIE,
                     patient3,
                     medecin2)) ;
+
             rendezVousRepo.save(new RendezVous( LocalDate.of(2025,12,18),
-                    Statu.Planifie,
+                    Statu.PLANIFIE,
                     patient4,
                     medecin2)) ;
             rendezVousRepo.save(rendezVousX);

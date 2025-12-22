@@ -38,10 +38,11 @@ public class RendezVousService {
         rendezVous.setPatient(patient);
         rendezVous.setMedecin(medecin);
         rendezVous.setDateRdv(requestDto.dateRdv());
-        rendezVous.setStatu(Statu.Planifie);
+        rendezVous.setStatu(Statu.PLANIFIE);
 
         return rendezVousRepo.save(rendezVous);
     }
+
     public List<RendezVous> getAll(){
         return rendezVousRepo.findAll();
     }
@@ -51,14 +52,11 @@ public class RendezVousService {
                 ()-> new EntityNotFoundException("Patient not found"));
 
         return rendezVousRepo.findRendezVousByPatient(patient) ;
-
     }
 
     public List<RendezVous> getRdvByMedecin(Long medecinId){
         Medecin  medecin = medecinRepo.findById(medecinId).orElseThrow(
                 ()-> new EntityNotFoundException("Medecin not found"));
-
-
         return rendezVousRepo.findRendezVousByMedecin(medecin) ;
 
     }
@@ -69,6 +67,7 @@ public class RendezVousService {
     }
 
     public List<RendezVous> getRdvByStatu(Statu statu){
+
         return rendezVousRepo.findRendezVousByStatu(statu) ;
     }
 

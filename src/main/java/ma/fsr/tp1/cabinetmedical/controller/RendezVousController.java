@@ -14,8 +14,8 @@ import java.util.List;
 @RequestMapping("/rendezVous")
 
 public class RendezVousController {
-    RendezVousService  rendezVousService ;
-    RendezVousRepo rendezVousRepo ;
+    public final RendezVousService  rendezVousService ;
+    public final RendezVousRepo rendezVousRepo ;
     RendezVousController(RendezVousService rendezVousService , RendezVousRepo rendezVousRepo){
         this.rendezVousService = rendezVousService;
         this.rendezVousRepo = rendezVousRepo;
@@ -36,13 +36,12 @@ public class RendezVousController {
         return rendezVousService.getRdvByPatient(id);
     }
 
-
     @GetMapping("/byDate")
     public List<RendezVous> getRendezVousByDate(@RequestParam LocalDate dateRdv){
         return rendezVousService.getRdvBydate(dateRdv);
     }
 
-    @GetMapping("/ByStatu")
+    @GetMapping("/byStatu")
     public List<RendezVous> getRendezVousByStatus(@RequestParam Statu statu){
         return rendezVousService.getRdvByStatu(statu);
     }

@@ -1,6 +1,5 @@
 package ma.fsr.tp1.cabinetmedical.service;
 
-import jakarta.persistence.EntityNotFoundException;
 import ma.fsr.tp1.cabinetmedical.dto.ConsultationRequestDto;
 import ma.fsr.tp1.cabinetmedical.entity.Consultation;
 import ma.fsr.tp1.cabinetmedical.entity.Medecin;

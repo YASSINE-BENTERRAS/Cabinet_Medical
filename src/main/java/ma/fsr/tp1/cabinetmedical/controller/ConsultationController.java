@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/consultation")
+@RequestMapping("/consultations")
 public class ConsultationController {
     private final ConsultationService consultationService;
     public ConsultationController(ConsultationService consultationService) {
@@ -25,6 +25,7 @@ public class ConsultationController {
     public List<Consultation> getAll(){
         return consultationService.getAll() ;
     }
+
     @GetMapping("/{id}")
     public Consultation getConsultationById(@PathVariable Long id){
         return consultationService.searchById(id);

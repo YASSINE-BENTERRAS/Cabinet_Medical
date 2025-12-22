@@ -18,7 +18,8 @@ public class PatientService {
     }
 
     public Patient getPatientById(Long id){
-        return patientRepo.findById(id).orElseThrow(()-> new IllegalArgumentException("Patient n'existe pas"));
+        return patientRepo.findById(id).orElseThrow(()->
+                new IllegalArgumentException("Patient n'existe pas"));
     }
 
     public List<Patient> searchPatientByNom(String nom){
@@ -28,32 +29,32 @@ public class PatientService {
     //Création d'un Patient
     public Patient createPatient(Patient patient) throws Exception {
         if (patient.getName()==null || patient.getName().isBlank()) {
-            throw new IllegalAccessException("Nom obligatoire") ;
+            throw new IllegalArgumentException("Nom obligatoire") ;
         }
         if (patient.getGenre()==null) {
-            throw new IllegalAccessException("Genre obligatoire") ;
+            throw new IllegalArgumentException("Genre obligatoire") ;
         }
         if (patient.getDateNaissance()==null) {
-            throw new IllegalAccessException("la date de naissance est obligatoire") ;
+            throw new IllegalArgumentException("la date de naissance est obligatoire") ;
         }
         return patientRepo.save(patient);
     }
 
     public Patient updatePatient(Patient patient) throws Exception {
         if (patient.getName()==null || patient.getName().isBlank()) {
-            throw new IllegalAccessException("Nom obligatoire") ;
+            throw new IllegalArgumentException("Nom obligatoire") ;
         }
         if (patient.getGenre()==null) {
-            throw new IllegalAccessException("Genre obligatoire") ;
+            throw new IllegalArgumentException("Genre obligatoire") ;
         }
         if (patient.getDateNaissance()==null) {
-            throw new IllegalAccessException("la date de naissance est obligatoire") ;
+            throw new IllegalArgumentException("la date de naissance est obligatoire") ;
         }
         return patientRepo.save(patient);
     }
     public void deletePatient(Patient patient) throws IllegalAccessException {
         if (!patientRepo.existsById(patient.getId())) {
-            throw new IllegalAccessException("Le patient n'existe pas") ;
+            throw new IllegalArgumentException("Le patient n'existe pas") ;
         }
          patientRepo.delete(patient);
     }
