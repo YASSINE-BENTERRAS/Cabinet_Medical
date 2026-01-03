@@ -22,13 +22,24 @@ public class MedecinService {
     public List<Medecin> getAll() {
         return medecinRepo.findAll();
     }
+
     public List<Medecin> getMedecinsByNom(String nom) {
         return medecinRepo.findByNom(nom);
     }
 
     public Medecin addMedecin(Medecin medecin){
-        return medecinRepo.save(medecin);
-    }
+           if (medecin.getNom().isEmpty() || medecin.getNom().isBlank())
+               throw new IllegalArgumentException("Le nom du médecin est obligatoire. ");
+
+           if ( medecin.getEmail()==null || !medecin.getEmail().contains("@"))
+               throw new IllegalArgumentException("Email du médecin invalide");
+
+           if(medecin.getSpecialite().isEmpty() || medecin.getSpecialite().isBlank())
+              throw new IllegalArgumentException("La spécialité du médecin est obligatoire");
+
+    return medecinRepo.save(medecin);
+
+        }
 
     public void deleteMedecin(Medecin medecin){
         medecinRepo.delete(medecin);

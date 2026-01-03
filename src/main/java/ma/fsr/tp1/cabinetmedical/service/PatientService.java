@@ -19,7 +19,7 @@ public class PatientService {
 
     public Patient getPatientById(Long id){
         return patientRepo.findById(id).orElseThrow(()->
-                new IllegalArgumentException("Patient n'existe pas"));
+                new IllegalArgumentException("Patient avec l'id"+id+"n'existe pas"));
     }
 
     public List<Patient> searchPatientByNom(String nom){
@@ -29,14 +29,15 @@ public class PatientService {
     //Création d'un Patient
     public Patient createPatient(Patient patient) throws Exception {
         if (patient.getName()==null || patient.getName().isBlank()) {
-            throw new IllegalArgumentException("Nom obligatoire") ;
+            throw new IllegalArgumentException("Le nom du patient est obligatoire. ") ;
         }
         if (patient.getGenre()==null) {
             throw new IllegalArgumentException("Genre obligatoire") ;
         }
         if (patient.getDateNaissance()==null) {
-            throw new IllegalArgumentException("la date de naissance est obligatoire") ;
+            throw new IllegalArgumentException("La date de naissance ne peut pas être future") ;
         }
+        if(patient.getTelephone()==null) throw new IllegalArgumentException("La date de naissance ne peut pas être future");
         return patientRepo.save(patient);
     }
 
@@ -52,6 +53,7 @@ public class PatientService {
         }
         return patientRepo.save(patient);
     }
+
     public void deletePatient(Patient patient) throws IllegalAccessException {
         if (!patientRepo.existsById(patient.getId())) {
             throw new IllegalArgumentException("Le patient n'existe pas") ;

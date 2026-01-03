@@ -30,9 +30,11 @@ public class RendezVousService {
 
     public RendezVous addRendezVous(RendezVousRequestDto requestDto){
         Patient patient = patientRepo.findById(requestDto.patientId()).orElseThrow(
-                ()-> new EntityNotFoundException("Patient not found"));
+                ()-> new EntityNotFoundException("Patient introuvable"));
         Medecin medecin = medecinRepo.findById(requestDto.medecinId()).orElseThrow(
-                ()-> new EntityNotFoundException("Medecin not found"));
+                ()-> new EntityNotFoundException("Medecin introuvable"));
+        if(requestDto.dateRdv().isBefore(LocalDate.now()))
+            throw new IllegalArgumentException("La date ne peut pas être dans le passé");
 
         RendezVous rendezVous = new RendezVous() ;
         rendezVous.setPatient(patient);
@@ -44,6 +46,7 @@ public class RendezVousService {
     }
 
     public List<RendezVous> getAll(){
+
         return rendezVousRepo.findAll();
     }
 

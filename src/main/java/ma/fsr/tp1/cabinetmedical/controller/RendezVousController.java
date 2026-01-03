@@ -21,9 +21,9 @@ public class RendezVousController {
         this.rendezVousRepo = rendezVousRepo;
     }
 
-    @GetMapping("/{id}")
-    public List<RendezVous> getRendezVousByMedecin(@PathVariable Long id ){
-        return rendezVousService.getRdvByMedecin(id);
+    @PostMapping
+    public RendezVous createRendezVous(@RequestBody RendezVousRequestDto rdv ){
+        return rendezVousService.addRendezVous(rdv) ;
     }
 
     @GetMapping()
@@ -31,7 +31,12 @@ public class RendezVousController {
         return rendezVousService.getAll();
     }
 
-    @GetMapping("/byPatientName")
+    @GetMapping("/medecin/{id}")
+    public List<RendezVous> getRendezVousByMedecin(@PathVariable Long id ){
+        return rendezVousService.getRdvByMedecin(id);
+    }
+
+    @GetMapping("/patient/{id}")
     public List<RendezVous> getRendezVousByPatient(@PathVariable Long id ){
         return rendezVousService.getRdvByPatient(id);
     }
@@ -45,14 +50,5 @@ public class RendezVousController {
     public List<RendezVous> getRendezVousByStatus(@RequestParam Statu statu){
         return rendezVousService.getRdvByStatu(statu);
     }
-
-    @PostMapping
-    public RendezVous createRendezVous(@RequestBody RendezVousRequestDto rdv ){
-        return rendezVousService.addRendezVous(rdv) ;
-
-    }
-
-
-
 
 }
